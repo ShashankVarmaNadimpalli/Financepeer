@@ -1,11 +1,7 @@
 <?php
-session_start();
-
 $u_email=$_GET['u_email'];
 $u_pass=$_GET['u_pass'];
 
-$_SESSION["email"]=$u_email;
-$_SESSION["pass"]=$u_pass;
 
 $con = new mysqli('localhost', 'root', '', 'financepeer');
 $query="select * from sample where u_email='".$u_email."'";
@@ -26,7 +22,10 @@ $result=mysqli_query($con,$query);
 			{
 			    if($row["u_email"]==$u_email AND $row["u_password"]==$u_pass)
 			    {
-			       header("location:jsonUpload.html");
+			       header("location:jsonUpload.php");
+			       session_start();  
+			       $_SESSION["email"]=$u_email;
+			       $_SESSION["pass"]=$u_pass;
 			    }
 			    else
 			    {
