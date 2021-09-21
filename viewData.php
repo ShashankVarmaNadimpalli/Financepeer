@@ -25,12 +25,12 @@ tr:nth-child(even) {
   <form method="post">
   </form>
   <table>
-                <tr>
-                  <th>ID</th>
-                  <th>USERID</th>
-                  <th>TITLE</th>
-                  <th>BODY</th>
-                </tr>
+      <tr>
+        <th>ID</th>
+        <th>USERID</th>
+        <th>TITLE</th>
+        <th>BODY</th>
+      </tr>
   <?php
     $con = new mysqli('localhost', 'root', '', 'financepeer');
     if(!$con)
@@ -52,7 +52,7 @@ tr:nth-child(even) {
                 </tr>
               ";
             }         
-      ?>  
-      </table>
+   ?>  
+   </table>
 </body>
 </html>
